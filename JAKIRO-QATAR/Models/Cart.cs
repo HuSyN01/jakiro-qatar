@@ -16,5 +16,6 @@
         public DateTime DateTime { get; set; }
         public decimal TotalPrice { get; set; }
         public OrderStatus Status { get; set; }
+        public List<CartItem> CartDetails { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JAKIRO_QATAR.Migrations
 {
     [DbContext(typeof(JakiroDbContext))]
-    [Migration("20231105170950_Initial Migration")]
+    [Migration("20231106140733_Initial Migration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -32,6 +32,15 @@ namespace JAKIRO_QATAR.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
